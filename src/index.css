@@ -39,3 +39,9 @@ body {
   /* modern browser */
   color: rgba(255, 255, 255, 0.1);
 }
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 50%;
+  }
+}

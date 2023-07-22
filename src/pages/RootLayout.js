@@ -9,13 +9,13 @@ import Media from "react-media";
 const RootLayout = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (!user) {
-        navigate("/auth/login");
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (!user) {
+  //       navigate("/auth/login");
+  //     }
+  //   });
+  // }, []);
 
   return (
     <>

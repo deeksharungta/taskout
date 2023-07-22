@@ -221,9 +221,9 @@
 /* BELOW 544px */
 /**************************/
 @media (max-width: 34em) {
-  html {
+  /* html {
     font-size: 44%;
-  }
+  } */
   .landing-page {
     overflow-y: scroll;
   }
