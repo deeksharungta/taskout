@@ -1,0 +1,12 @@
+.title {
+  color: #fff;
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+}
+
+.fallback-text {
+  font-size: 1.6rem;
+  color: #777;
+  font-weight: 300;
+}

@@ -1,0 +1,154 @@
+.auth-form {
+  width: 44rem;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.heading {
+  font: inherit;
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 3.2rem;
+}
+
+.btn {
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  width: 100rem;
+  max-width: 100%;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid #222;
+  padding: 1.2rem 0.7rem;
+  background: transparent;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #222;
+}
+
+.button span {
+  margin-left: 0;
+}
+
+.icon {
+  height: 1.6rem;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  margin: 1.6rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.form-control input,
+.form-control label {
+  display: block;
+}
+
+.form-control label {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-control input {
+  font: inherit;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background: transparent;
+  width: 100rem;
+  max-width: 100%;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid #414145;
+  padding: 1.6rem 1.2rem;
+}
+
+.form-control input:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.action button {
+  font: inherit;
+  border: none;
+  color: #121217;
+  background-color: #73b399;
+  padding: 1rem 2.7rem;
+  cursor: pointer;
+  width: 100rem;
+  max-width: 100%;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.action button:hover,
+.action button:active {
+  color: #121217;
+  background-color: #68a18a;
+}
+
+.auth-form p {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ccc;
+}
+
+.link:link,
+.link:visited {
+  font-size: 1.2rem;
+  color: #777;
+  display: inline-block;
+}
+
+.link:active,
+.link:hover {
+  color: #ccc;
+}
+
+.text {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.form-control .error-text {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  color: #c51244;
+  text-align: left;
+}
+
+.forgot-password-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #777;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.forgot-password-btn:active,
+.forgot-password-btn:hover {
+  color: #ccc;
+}

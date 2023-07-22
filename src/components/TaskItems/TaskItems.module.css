@@ -1,0 +1,72 @@
+.task-item {
+  border-radius: 10px;
+  width: 84rem;
+  background: #2a2a2e;
+  margin-bottom: 3.6rem;
+}
+
+.task-item:last-child {
+  margin-bottom: 0;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #07070a;
+  background: #b1de8e;
+  padding: 0.9rem 0 0.9rem 1.6rem;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.tasks {
+  list-style: none;
+  padding-left: 1.6rem;
+  padding-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.task-item hr {
+  border: 0;
+  height: 0.05rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+
+.task-item a:link,
+.task-item a:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.task-item a:hover,
+.task-item a:active {
+  color: #888;
+  text-decoration: underline;
+}
+
+/**************************/
+/* BELOW 1376px  */
+/**************************/
+@media (max-width: 86em) {
+  .task-item {
+    width: 64rem;
+  }
+}
+
+/**************************/
+/* BELOW 480px  */
+/**************************/
+
+@media (max-width: 30em) {
+  .task-item {
+    width: 46rem;
+  }
+}

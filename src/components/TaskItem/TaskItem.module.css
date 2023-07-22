@@ -1,0 +1,74 @@
+.task-item__description {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.task-item__text {
+  cursor: pointer;
+  font: inherit;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.task-item__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  border: 2px solid #73b399;
+  border-radius: 0.7rem;
+  height: 2rem;
+  width: 2rem;
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  transition: background-image 1s;
+  animation: 1s ease-in-out;
+}
+
+.task-item__checkbox:checked {
+  background: url("../../assets/completed.svg");
+  background-position: center;
+}
+
+.task-item__checkbox:checked + .task-item__text {
+  text-decoration: line-through;
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: auto;
+  margin-right: 1.6rem;
+}
+
+.btn {
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.task-details {
+  margin-left: 3.2rem;
+}
+
+.description {
+  font-size: 1.6rem;
+  color: #666;
+}
+
+.date {
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  color: #d24b4b;
+}

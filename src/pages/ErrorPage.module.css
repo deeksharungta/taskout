@@ -1,0 +1,33 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.error-page img {
+  height: 58rem;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.error-page a:link,
+.error-page a:visited {
+  text-decoration: none;
+  border: 1px solid #666;
+  border-radius: 7px;
+  padding: 0.8rem 1.2rem;
+  color: #666;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.error-page a:hover,
+.error-page a:active {
+  color: #fff;
+  background-color: #666;
+}

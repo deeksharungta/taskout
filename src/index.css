@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #121217;
+  color: #fff;
+}
+
+*::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+*:-moz-placeholder {
+  /* FF 4-18 */
+  color: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+*::-moz-placeholder {
+  /* FF 19+ */
+  color: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+*:-ms-input-placeholder {
+  /* IE 10+ */
+  color: rgba(255, 255, 255, 0.1);
+}
+*::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(255, 255, 255, 0.1);
+}
+*::placeholder {
+  /* modern browser */
+  color: rgba(255, 255, 255, 0.1);
+}

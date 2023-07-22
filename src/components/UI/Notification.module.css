@@ -1,0 +1,38 @@
+.notification {
+  background-color: #1a8ed1;
+  text-align: center;
+  display: flex;
+  padding: 0.5rem 4rem;
+  align-items: center;
+  color: white;
+  position: fixed;
+  z-index: 4;
+  left: 50%;
+  border-radius: 4px;
+  animation: slide-down 300ms ease-out forwards;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.notification p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.error {
+  background-color: #c51244;
+}
+
+.success {
+  background-color: #1ad1b9;
+}

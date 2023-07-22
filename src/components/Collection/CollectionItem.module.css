@@ -1,0 +1,38 @@
+.collection-item {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.collection-item a:link,
+.collection-item a:visited {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+}
+
+.collection-item a.active,
+.collection-item a:hover {
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: auto;
+  margin-right: 1.6rem;
+}
+
+.btn {
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn img {
+  width: 2rem;
+  height: 2rem;
+}

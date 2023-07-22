@@ -1,0 +1,122 @@
+*::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 100px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+}
+
+.sidebar {
+  background: #2a2a2e;
+  height: 100vh;
+  width: 36rem;
+  display: flex;
+  flex-direction: column;
+  padding: 5.2rem 0 0 0;
+  gap: 1.5rem;
+  transition: 0.5s;
+  position: fixed;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons img {
+  height: 2.4rem;
+}
+
+.buttons a:link,
+.buttons a:visited {
+  color: #fff;
+  font: inherit;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: transparent;
+  padding: 1.8rem 4.4rem 1.8rem 2.4rem;
+}
+
+.buttons a:hover,
+.buttons a.active {
+  background: #555;
+}
+
+span {
+  margin-left: auto;
+}
+
+.collection-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2.8rem 1.6rem 2.8rem;
+}
+
+.collection-heading h1 {
+  color: #fff;
+  font: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.collection-heading button {
+  height: 2.4rem;
+  width: 2.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.collection-heading button img {
+  height: 2.4rem;
+}
+
+.collection {
+  overflow: hidden;
+}
+
+.collection:hover {
+  overflow: auto;
+}
+
+.collectionName {
+  margin-left: 2.8rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.hr {
+  border: 0;
+  width: 30rem;
+  height: 0.05rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1.6rem 0;
+}
+
+.collectionName li:last-child hr {
+  display: none;
+}
+
+/**************************/
+/* BELOW 1008px  */
+/**************************/
+@media (max-width: 63em) {
+  .sidebar {
+    width: 28rem;
+  }
+  .hr {
+    width: 22rem;
+  }
+}

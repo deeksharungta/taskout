@@ -1,0 +1,15 @@
+.login-page {
+  max-width: 120rem;
+  margin: 8rem auto;
+}
+
+.login-page img {
+  width: 16rem;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8rem auto;
+}

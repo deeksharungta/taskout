@@ -1,0 +1,46 @@
+.delete-dialog {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #2a2a2e;
+}
+
+.delete-dialog h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.actions {
+  text-align: right;
+  margin-top: 2.4rem;
+}
+
+.actions button {
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  padding: 0.7rem 1.6rem;
+  cursor: pointer;
+  margin-left: 1.2rem;
+}
+
+.actions .btn-secondary {
+  background: #59595d;
+}
+
+.actions .btn-secondary:hover,
+.actions .btn-secondary:active {
+  background: #717174;
+}
+
+.actions .btn-primary {
+  background: #73b399;
+}
+
+.actions .btn-primary:hover,
+.actions .btn-primary:active {
+  background: #68a18a;
+}

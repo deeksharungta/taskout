@@ -1,0 +1,142 @@
+.add-task-form {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #2a2a2e;
+}
+
+.form-control {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.text {
+  grid-column: 1/-1;
+  color: #fff;
+}
+
+.form-control input,
+.form-control select {
+  border-radius: 0.5rem;
+  border: 1px solid #414145;
+  background: transparent;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1.2rem 0 1.2rem 1.2rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+input[type="date"] {
+  background: transparent;
+  font: inherit;
+  color: #fff;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #414145;
+  outline: none;
+  border-radius: 5px;
+  width: 16rem;
+  padding-right: 1.2rem;
+}
+
+::-webkit-calendar-picker-indicator {
+  background: url("../../assets/calendar2.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.select-container {
+  width: 16rem;
+}
+
+select {
+  color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select.select {
+  background: url("../../assets/arrowdown2.svg");
+  background-position: calc(100% - 0.6rem);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+option {
+  background: #020202;
+}
+
+.error-text {
+  font-size: 1.2rem;
+  color: #c51244;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions button {
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  padding: 0.7rem 1.6rem;
+  cursor: pointer;
+  margin-left: 1.6rem;
+}
+
+.actions .btn-secondary {
+  background: #59595d;
+}
+
+.actions .btn-secondary:hover,
+.actions .btn-secondary:active {
+  background: #717174;
+}
+
+.actions .btn-primary {
+  background: #73b399;
+}
+
+.actions .btn-primary:hover,
+.actions .btn-primary:active {
+  background: #68a18a;
+}
+
+.actions .btn-primary:disabled,
+.actions .btn-primary:disabled:hover,
+.actions .btn-primary:disabled:active {
+  background: #59595d;
+  color: #fff;
+  background: #59595d;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .form-control {
+    grid-template-columns: auto;
+  }
+
+  .text,
+  .form-control input,
+  .select-container,
+  input[type="date"] {
+    grid-column: 1;
+  }
+
+  input[type="date"] {
+    width: 100%;
+    background-size: 1.6rem;
+    background-position: calc(100% - 1.6rem);
+  }
+}

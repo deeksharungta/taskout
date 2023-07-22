@@ -1,0 +1,39 @@
+.card {
+  margin: 16rem auto 0 64rem;
+}
+
+/**************************/
+/* BELOW 1488px  */
+/**************************/
+@media (max-width: 93em) {
+  .card {
+    margin-left: 50rem;
+  }
+}
+
+/**************************/
+/* BELOW 1184px  */
+/**************************/
+@media (max-width: 74em) {
+  .card {
+    margin-left: 46rem;
+  }
+}
+
+/**************************/
+/* BELOW 1008px  */
+/**************************/
+@media (max-width: 63em) {
+  .card {
+    margin-left: 36rem;
+  }
+}
+
+/**************************/
+/* BELOW 832px  */
+/**************************/
+@media (max-width: 52em) {
+  .card {
+    margin-left: auto;
+  }
+}
