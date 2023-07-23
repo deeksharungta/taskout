@@ -146,7 +146,7 @@ const AuthForm = ({ label }) => {
           <span>Continue with Google</span>
         </button>
       </div>
-      <hr />
+      <hr className={classes.hr} />
       <div className={classes.form}>
         <div className={classes["form-control"]}>
           <label htmlFor="email">Email</label>

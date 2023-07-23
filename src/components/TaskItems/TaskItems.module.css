@@ -21,13 +21,13 @@
 .tasks {
   list-style: none;
   padding-left: 1.6rem;
-  padding-top: 2.4rem;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  /* gap: 2.4rem; */
 }
 
-.task-item hr {
+.hr {
   border: 0;
   height: 0.05rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);

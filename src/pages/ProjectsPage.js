@@ -37,7 +37,7 @@ const ProjectsPage = () => {
           {filteredTasks.map((task) => (
             <li key={task.id}>
               <TaskItem task={task} label={params.projectId} />
-              <hr />
+              <hr className={classes.hr} />
             </li>
           ))}
         </ul>

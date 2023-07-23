@@ -26,3 +26,9 @@
 .add-task-btn img {
   height: 2.6rem;
 }
+
+.fallback-text {
+  font-size: 1.6rem;
+  color: #777;
+  font-weight: 300;
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AddTaskIcon from "../../assets/AddTaskIcon.svg";
 import Logo from "../../assets/Logo.svg";
 import HamburgerMenu from "../../assets/hambergermenu.svg";
+import Home from "../../assets/home2.svg";
 import CloseMenu from "../../assets/cross.svg";
 import classes from "./Header.module.css";
 import AddTaskForm from "../AddTaskForm/AddTaskForm";
@@ -30,16 +31,26 @@ export default function Header() {
   return (
     <>
       <header className={classes.header}>
-        <div>
+        <div className={classes.left}>
           <Media
             query="(max-width: 831px)"
             render={() => (
-              <button className={classes.btn} onClick={toggleHamburgerMenu}>
-                <img
-                  src={showHamburgerMenu ? CloseMenu : HamburgerMenu}
-                  alt="Icon for closing and opening hamburger menu"
-                />
-              </button>
+              <>
+                <button className={classes.btn} onClick={toggleHamburgerMenu}>
+                  <img
+                    src={showHamburgerMenu ? CloseMenu : HamburgerMenu}
+                    alt="Icon for closing and opening hamburger menu"
+                  />
+                </button>
+
+                <Link to="/app/today" className={classes["home-btn"]}>
+                  <img
+                    src={Home}
+                    className={classes["home-button"]}
+                    alt="Home Button"
+                  />
+                </Link>
+              </>
             )}
           />
           <Media
@@ -48,8 +59,8 @@ export default function Header() {
               <Link to="/app/today">
                 <img
                   src={Logo}
-                  className={classes.logo}
                   alt="Logo of Taskout"
+                  className={classes.logo}
                 />
               </Link>
             )}

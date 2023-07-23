@@ -8,13 +8,13 @@
 .tasks {
   list-style: none;
   padding-left: 1.6rem;
-  padding-top: 2.4rem;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  /* gap: 1.6rem; */
 }
 
-.tasks hr {
+.hr {
   border: 0;
   height: 0.05rem;
   width: 84rem;
@@ -28,15 +28,12 @@
   color: #777;
   font-weight: 300;
 }
-/* .tasks li:last-child hr {
-  display: none;
-} */
 
 /**************************/
 /* BELOW 1376px  */
 /**************************/
 @media (max-width: 86em) {
-  .tasks hr {
+  .hr {
     width: 64rem;
   }
 }
@@ -46,7 +43,7 @@
 /**************************/
 
 @media (max-width: 30em) {
-  .tasks hr {
+  .hr {
     width: 46rem;
   }
 }

@@ -40,7 +40,7 @@
   margin-top: 0.2rem;
 }
 
-.task-item hr {
+.hr {
   border: 0;
   height: 0.05rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);

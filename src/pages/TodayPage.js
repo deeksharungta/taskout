@@ -34,7 +34,13 @@ export default function TodayPage() {
         Add task
       </button>
       {showAddTask && <AddTaskForm onClose={closeHandler} />}
-      <TaskItems tasks={tasks} label="Today" />
+      {Object.keys(tasks).length > 0 ? (
+        <TaskItems tasks={tasks} label="Today" />
+      ) : (
+        <p className={classes["fallback-text"]}>
+          // Seize the day's potential; add your tasks to shape it.
+        </p>
+      )}
     </Card>
   );
 }

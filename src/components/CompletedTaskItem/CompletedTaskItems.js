@@ -26,7 +26,7 @@ const CompletedTaskItems = (props) => {
               </li>
             ))}
           </ul>
-          <hr />
+          <hr className={classes.hr} />
           <Link to={`../project/${heading}`}>Go to Collection</Link>
         </div>
       ))}

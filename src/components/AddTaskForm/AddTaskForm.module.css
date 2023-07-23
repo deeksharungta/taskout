@@ -44,7 +44,7 @@ input[type="date"] {
   padding-right: 1.2rem;
 }
 
-::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
   background: url("../../assets/calendar2.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -120,6 +120,14 @@ option {
   color: #fff;
   background: #59595d;
   cursor: not-allowed;
+}
+
+.hr {
+  border: 0;
+  height: 0.05rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1.6rem 0;
 }
 
 @media (max-width: 768px) {

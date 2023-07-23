@@ -80,7 +80,7 @@ const CollectionForm = (props) => {
     <Modal onClose={props.onClose}>
       <form onSubmit={submitHandler} className={classes["add-collection-form"]}>
         <h1>Add Collection</h1>
-        <hr />
+        <hr className={classes.hr} />
         <div className={classes.inputs}>
           <label htmlFor="collectionName">Name</label>
           <input
@@ -119,7 +119,7 @@ const CollectionForm = (props) => {
             <p className={classes["error-text"]}>Please select a Color</p>
           )}
         </div>
-        <hr />
+        <hr className={classes.hr} />
         <div className={classes.actions}>
           <button
             type="button"

@@ -15,7 +15,8 @@
   height: 3rem;
 }
 
-.right {
+.right,
+.left {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -34,6 +35,25 @@
 .right a:hover {
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.home-btn:link,
+.home-btn:visited {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-btn:active,
+.home-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.home-button {
+  height: 2.6rem;
 }
 
 .btn {

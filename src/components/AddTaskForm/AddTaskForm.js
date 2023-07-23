@@ -175,7 +175,7 @@ const AddTaskForm = (props) => {
             )}
           </div>
         </div>
-        <hr />
+        <hr className={classes.hr} />
         <div className={classes.actions}>
           <button
             type="button"

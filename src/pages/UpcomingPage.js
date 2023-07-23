@@ -30,7 +30,13 @@ export default function UpcomingPage() {
         Add task
       </button>
       {showAddTask && <AddTaskForm onClose={closeHandler} />}
-      <TaskItems tasks={tasks} label="Upcoming" />
+      {Object.keys(tasks).length > 0 ? (
+        <TaskItems tasks={tasks} label="Upcoming" />
+      ) : (
+        <p className={classes["fallback-text"]}>
+          // The road ahead is clear; fill it with your upcoming tasks.
+        </p>
+      )}
     </Card>
   );
 }
