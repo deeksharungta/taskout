@@ -121,7 +121,6 @@ const AuthForm = ({ label }) => {
       })
       .then(() => {
         dispatch(fetchData());
-        dispatch(fetchCollectionData());
       })
       .then(() => {
         dispatch(
@@ -131,6 +130,9 @@ const AuthForm = ({ label }) => {
             color: "#FF355E",
           })
         );
+      })
+      .then(() => {
+        dispatch(fetchCollectionData());
       })
       .then(() => {
         navigate("/app/today");
