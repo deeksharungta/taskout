@@ -1,39 +1,10 @@
-import { redirect } from "react-router-dom";
-// import { auth } from "./firebase";
-
-// export function getTokenDuration() {
-//   // const storedExpirationDate = localStorage.getItem("expiration");
-//   // const expirationDate = new Date(storedExpirationDate);
-//   // const now = new Date();
-//   // const duration = expirationDate.getTime() - now.getTime();
-//   // return duration;
-// }
-
-// export function getAuthToken() {
-//   const token = localStorage.getItem("token");
-
-//   if (!token) {
-//     return null;
-//   }
-
-//   const tokenDuration = getTokenDuration();
-
-//   if (tokenDuration < 0) {
-//     return "EXPIRED";
-//   }
-
-//   return token;
-// }
-
-// export function tokenLoader() {
-//   const token = getAuthToken();
-//   return token;
-// }
+import { redirect, useNavigate } from "react-router-dom";
 
 export function checkAuthLoader(auth) {
   auth.onAuthStateChanged((user) => {
+    console.log(user);
     if (!user) {
-      return redirect("/auth");
+      return redirect("/auth/login");
     }
   });
 }

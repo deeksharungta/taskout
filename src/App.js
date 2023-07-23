@@ -54,6 +54,7 @@ const router = createBrowserRouter([
       // </ProtectedRoute>
     ),
     loader: checkAuthLoader(auth),
+
     children: [
       {
         path: "today",

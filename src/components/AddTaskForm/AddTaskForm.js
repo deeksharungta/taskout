@@ -9,6 +9,9 @@ import { editData, setData } from "../../store/task-actions";
 const isNotEmpty = (value) => value.trim() !== "";
 
 const AddTaskForm = (props) => {
+  const today = new Date();
+  const defaultValue = today.toISOString().substring(0, 10);
+
   const dispatch = useDispatch();
   const collections = useSelector((state) => state.collection.collections);
 
@@ -54,12 +57,14 @@ const AddTaskForm = (props) => {
 
   useEffect(() => {
     if (props.initialValues) {
-      const { name, description, date, collection, color } =
+      const { name, description, date, collection, color, collectionId } =
         props.initialValues;
       taskNameChangeHandler({ target: { value: name } });
       descriptionChangeHandler({ target: { value: description } });
       dateChangeHandler({ target: { value: date } });
-      collectionChangeHandler({ target: { value: `${collection} ${color}` } });
+      collectionChangeHandler({
+        target: { value: `${collection} ${color} ${collectionId}` },
+      });
     }
   }, [props.initialValues]);
 
@@ -81,6 +86,7 @@ const AddTaskForm = (props) => {
           date: dateValue,
           collection: collection[0],
           color: collection[1],
+          collectionId: collection[2],
         })
       );
     } else {
@@ -92,6 +98,7 @@ const AddTaskForm = (props) => {
           date: dateValue,
           collection: collection[0],
           color: collection[1],
+          collectionId: collection[2],
         })
       );
     }
@@ -139,7 +146,7 @@ const AddTaskForm = (props) => {
             <input
               type="date"
               id="date"
-              value={dateValue}
+              value={dateValue ? dateValue : defaultValue}
               onChange={dateChangeHandler}
               onBlur={dateBlurHandler}
             />
@@ -162,7 +169,7 @@ const AddTaskForm = (props) => {
               {collections.map((collection) => (
                 <option
                   key={collection.name}
-                  value={`${collection.name} ${collection.color}`}
+                  value={`${collection.name} ${collection.color} ${collection.id}`}
                 >
                   {collection.name}
                 </option>

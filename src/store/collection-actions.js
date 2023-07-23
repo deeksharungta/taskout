@@ -2,6 +2,7 @@ import { ref, onValue, set, push } from "firebase/database";
 import { db, auth } from "../utils/firebase";
 import { uiActions } from "./ui-slice";
 import { collectionActions } from "./collection-slice";
+import { taskActions } from "./task-slice";
 
 export const fetchCollectionData = () => {
   return (dispatch) => {
@@ -77,16 +78,26 @@ export const deleteCollectionData = (collectionId) => {
     try {
       const state = getState();
       const collections = state.collection.collections;
+      const tasks = state.task.tasks;
 
       const collectionsRef = ref(
         db,
         `users/${auth.currentUser.uid}/collections`
       );
+      const tasksRef = ref(db, `users/${auth.currentUser.uid}/tasks`);
 
       await set(
         collectionsRef,
         collections.filter((collection) => collection.id !== collectionId)
       );
+
+      await set(
+        tasksRef,
+        tasks.filter((task) => task.collectionId !== collectionId)
+      );
+
+      dispatch(collectionActions.deleteCollection(collectionId));
+      dispatch(taskActions.deleteCollectionTask(collectionId));
     } catch (error) {
       dispatch(
         uiActions.showNotification({

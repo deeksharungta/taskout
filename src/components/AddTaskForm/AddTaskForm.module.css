@@ -44,12 +44,12 @@ input[type="date"] {
   padding-right: 1.2rem;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+/* input[type="date"]::-webkit-calendar-picker-indicator {
   background: url("../../assets/calendar2.svg");
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
-}
+} */
 
 .select-container {
   width: 16rem;

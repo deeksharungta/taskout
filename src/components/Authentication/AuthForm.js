@@ -11,7 +11,10 @@ import {
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { setCollectionData } from "../../store/collection-actions";
+import {
+  fetchCollectionData,
+  setCollectionData,
+} from "../../store/collection-actions";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import useInput from "../../hooks/use-input";
@@ -118,6 +121,7 @@ const AuthForm = ({ label }) => {
       })
       .then(() => {
         dispatch(fetchData());
+        dispatch(fetchCollectionData());
       })
       .then(() => {
         dispatch(

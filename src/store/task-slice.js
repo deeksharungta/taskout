@@ -11,6 +11,18 @@ const taskSlice = createSlice({
       state.tasks = action.payload.tasks;
       state.completedTasks = action.payload.completedTasks;
     },
+
+    deleteTask(state, action) {
+      const taskId = action.payload;
+      state.tasks = state.tasks.filter((task) => task.id !== taskId);
+    },
+
+    deleteCollectionTask(state, action) {
+      const collectionId = action.payload;
+      state.tasks = state.tasks.filter(
+        (task) => task.collectionId !== collectionId
+      );
+    },
   },
 });
 

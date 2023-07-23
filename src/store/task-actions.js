@@ -35,6 +35,7 @@ export const setData = (newTask) => {
         date: newTask.date,
         collection: newTask.collection,
         color: newTask.color,
+        collectionId: newTask.collectionId,
       });
     } catch (error) {
       dispatch(
@@ -61,6 +62,7 @@ export const deleteData = (taskId) => {
         tasksRef,
         tasks.filter((task) => task.id !== taskId)
       );
+      dispatch(taskActions.deleteTask(taskId));
     } catch (error) {
       dispatch(
         uiActions.showNotification({
@@ -119,7 +121,7 @@ export const editData = (editedTask) => {
       const existingTaskIndex = tasks.findIndex(
         (task) => task.id === editedTask.id
       );
-
+      console.log(editedTask.collectionId);
       if (existingTaskIndex !== -1) {
         const updatedTasks = [...tasks];
         updatedTasks[existingTaskIndex] = {
@@ -129,6 +131,7 @@ export const editData = (editedTask) => {
           date: editedTask.date,
           collection: editedTask.collection,
           color: editedTask.color,
+          collectionId: editedTask.collectionId,
         };
 
         const tasksRef = ref(db, `users/${auth.currentUser.uid}/tasks`);
