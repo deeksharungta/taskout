@@ -3,6 +3,7 @@
   width: 84rem;
   background: #2a2a2e;
   margin-bottom: 3.6rem;
+  padding-bottom: 2.4rem;
 }
 
 .task-item:last-child {
@@ -38,31 +39,6 @@
   height: 2rem;
   width: 2rem;
   margin-top: 0.2rem;
-}
-
-.hr {
-  border: 0;
-  height: 0.05rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 1rem;
-}
-
-.task-item a:link,
-.task-item a:visited {
-  text-decoration: none;
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #ccc;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 1rem;
-}
-
-.task-item a:hover,
-.task-item a:active {
-  color: #888;
-  text-decoration: underline;
 }
 
 .task-item__description {

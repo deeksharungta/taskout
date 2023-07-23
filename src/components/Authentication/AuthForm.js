@@ -57,10 +57,8 @@ const AuthForm = ({ label }) => {
 
   const googleLoginHandler = () => {
     signInWithPopup(auth, provider)
-      .then(() => {
-        dispatch(fetchData());
-      })
       .then((result) => {
+        localStorage.setItem("isLoggedIn", "1");
         dispatch(
           setCollectionData({
             id: uuidv4(),
@@ -69,6 +67,10 @@ const AuthForm = ({ label }) => {
           })
         );
       })
+      .then(() => {
+        dispatch(fetchData());
+      })
+
       .catch((error) => {
         dispatch(
           uiActions.showNotification({
@@ -82,6 +84,9 @@ const AuthForm = ({ label }) => {
 
   const logInHandler = () => {
     signInWithEmailAndPassword(auth, emailValue, passwordValue)
+      .then(() => {
+        localStorage.setItem("isLoggedIn", "1");
+      })
       .then(() => {
         navigate("/app/today");
       })
@@ -113,12 +118,14 @@ const AuthForm = ({ label }) => {
   const signUpHandler = () => {
     createUserWithEmailAndPassword(auth, emailValue, passwordValue)
       .then((userCredential) => {
+        localStorage.setItem("isLoggedIn", "1");
         const user = userCredential.user;
         return updateProfile(user, {
           displayName: usernameValue,
           photoURL: `https://ui-avatars.com/api/?name=${usernameValue}`,
         });
       })
+
       .then(() => {
         dispatch(fetchData());
       })

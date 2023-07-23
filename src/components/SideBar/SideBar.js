@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./SideBar.module.css";
 import overdueIcon from "../../assets/warning2.svg";
 import todayIcon from "../../assets/calendar.svg";
@@ -8,13 +8,10 @@ import addIcon from "../../assets/add.svg";
 import CollectionItem from "../Collection/CollectionItem";
 import { NavLink } from "react-router-dom";
 import CollectionForm from "../Collection/CollectionForm";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCollectionData } from "../../store/collection-actions";
-import { auth } from "../../utils/firebase";
+import { useSelector } from "react-redux";
 
 const SideBar = () => {
   const [showAddCollection, setShowAddCollection] = useState(false);
-  const dispatch = useDispatch();
   const clickHandler = () => {
     setShowAddCollection(true);
   };
@@ -24,15 +21,7 @@ const SideBar = () => {
   };
 
   const collections = useSelector((state) => state.collection.collections);
-  useEffect(() => {
-    const unsub = auth.onAuthStateChanged((authObj) => {
-      unsub();
-      if (authObj) {
-        dispatch(fetchCollectionData());
-      } else {
-      }
-    });
-  }, []);
+
   return (
     <aside className={classes.sidebar}>
       {showAddCollection && <CollectionForm onClose={closeHandler} />}

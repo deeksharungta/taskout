@@ -1,21 +1,27 @@
 import React, { useEffect } from "react";
 import Header from "../components/Header/Header";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import classes from "./RootLayout.module.css";
 import SideBar from "../components/SideBar/SideBar";
 import { auth } from "../utils/firebase";
 import Media from "react-media";
+import { useDispatch } from "react-redux";
+import { fetchCollectionData } from "../store/collection-actions";
+import { fetchData } from "../store/task-actions";
 
 const RootLayout = () => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   auth.onAuthStateChanged((user) => {
-  //     if (!user) {
-  //       navigate("/auth/login");
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    const unsub = auth.onAuthStateChanged((authObj) => {
+      unsub();
+      if (authObj) {
+        dispatch(fetchCollectionData());
+        dispatch(fetchData());
+      } else {
+      }
+    });
+  }, []);
 
   return (
     <>

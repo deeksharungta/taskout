@@ -1,21 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import { auth } from "../utils/firebase";
-import { useEffect } from "react";
-import { fetchData } from "../store/task-actions";
+import { useSelector } from "react-redux";
 
 const useTasks = (filterTasksLogic) => {
-  const dispatch = useDispatch();
   const tasks = useSelector((state) => state.task.tasks);
-
-  useEffect(() => {
-    const unsub = auth.onAuthStateChanged((authObj) => {
-      unsub();
-      if (authObj) {
-        dispatch(fetchData());
-      } else {
-      }
-    });
-  }, []);
 
   const today = new Date();
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddTaskIcon from "../../assets/AddTaskIcon.svg";
 import Logo from "../../assets/Logo.svg";
 import HamburgerMenu from "../../assets/hambergermenu.svg";
@@ -15,6 +15,7 @@ import Media from "react-media";
 export default function Header() {
   const [showAddTask, setShowAddTask] = useState(false);
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
+  const [photoURL, setPhotoURL] = useState(auth?.currentUser?.photoURL);
 
   const clickHandler = () => {
     setShowAddTask(true);
@@ -27,6 +28,15 @@ export default function Header() {
   const toggleHamburgerMenu = () => {
     setShowHamburgerMenu((prevShow) => !prevShow);
   };
+
+  useEffect(() => {
+    const unsub = auth.onAuthStateChanged(function (user) {
+      unsub();
+      if (user != null) {
+        setPhotoURL(user.photoURL);
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -77,11 +87,7 @@ export default function Header() {
               isActive ? classes.active : undefined
             }
           >
-            <img
-              src={auth?.currentUser?.photoURL}
-              className={classes.profile}
-              alt="Profile"
-            />
+            <img src={photoURL} className={classes.profile} alt="Profile" />
           </NavLink>
         </div>
       </header>

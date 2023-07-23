@@ -3,7 +3,6 @@ import classes from "./DeleteDialogBox.module.css";
 import Modal from "../UI/Modal";
 
 const DeleteDialogBox = ({ cancelHandler, confirmHandler }) => {
-  console.log(confirmHandler);
   return (
     <Modal onClose={cancelHandler}>
       <div className={classes["delete-dialog"]}>

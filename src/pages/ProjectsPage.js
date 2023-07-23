@@ -1,27 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import classes from "./ProjectsPage.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import TaskItem from "../components/TaskItem/TaskItem";
 import { Helmet } from "react-helmet";
 import Card from "../components/UI/Card";
-import { auth } from "../utils/firebase";
-import { fetchData } from "../store/task-actions";
 
 const ProjectsPage = () => {
   const params = useParams();
-  const dispatch = useDispatch();
+
   const tasks = useSelector((state) => state.task.tasks);
 
-  useEffect(() => {
-    const unsub = auth.onAuthStateChanged((authObj) => {
-      unsub();
-      if (authObj) {
-        dispatch(fetchData());
-      } else {
-      }
-    });
-  }, []);
   const filteredTasks = tasks.filter(
     (task) => task.collection === params.projectId
   );

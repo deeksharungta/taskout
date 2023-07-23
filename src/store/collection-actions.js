@@ -111,68 +111,68 @@ export const deleteCollectionData = (collectionId) => {
   };
 };
 
-export const editCollectionData = (editedCollection) => {
-  return async (dispatch, getState) => {
-    try {
-      const state = getState();
-      const collections = state.collection.collections;
+// export const editCollectionData = (editedCollection) => {
+//   return async (dispatch, getState) => {
+//     try {
+//       const state = getState();
+//       const collections = state.collection.collections;
 
-      const existingCollection = collections.find(
-        (collection) => collection.id === editedCollection.id
-      );
+//       const existingCollection = collections.find(
+//         (collection) => collection.id === editedCollection.id
+//       );
 
-      const existingCollectionName = collections.find(
-        (collection) => collection.name === editedCollection.name
-      );
+//       const existingCollectionName = collections.find(
+//         (collection) => collection.name === editedCollection.name
+//       );
 
-      const hasDifferentColor =
-        existingCollection.color !== editedCollection.color;
+//       const hasDifferentColor =
+//         existingCollection.color !== editedCollection.color;
 
-      if (!existingCollectionName || hasDifferentColor) {
-        const existingCollectionIndex = collections.findIndex(
-          (collection) => collection.id === editedCollection.id
-        );
+//       if (!existingCollectionName || hasDifferentColor) {
+//         const existingCollectionIndex = collections.findIndex(
+//           (collection) => collection.id === editedCollection.id
+//         );
 
-        if (existingCollectionIndex !== -1) {
-          const updatedCollections = [...collections];
-          updatedCollections[existingCollectionIndex] = {
-            ...updatedCollections[existingCollectionIndex],
-            name: editedCollection.name,
-            color: editedCollection.color,
-          };
+//         if (existingCollectionIndex !== -1) {
+//           const updatedCollections = [...collections];
+//           updatedCollections[existingCollectionIndex] = {
+//             ...updatedCollections[existingCollectionIndex],
+//             name: editedCollection.name,
+//             color: editedCollection.color,
+//           };
 
-          const collectionsRef = ref(
-            db,
-            `users/${auth.currentUser.uid}/collections`
-          );
+//           const collectionsRef = ref(
+//             db,
+//             `users/${auth.currentUser.uid}/collections`
+//           );
 
-          await set(collectionsRef, updatedCollections);
+//           await set(collectionsRef, updatedCollections);
 
-          // // Dispatch action to update Redux state with the edited task
-          // dispatch(taskActions.editTask(editedTask));
-        }
-      } else {
-        dispatch(
-          uiActions.showNotification({
-            status: "error",
-            title: "Error!",
-            message: "Collection with the same name already exists!",
-          })
-        );
-        // console.error(
-        //   "Collection with the same name already exists:",
-        //   existingCollection
-        // );
-      }
-    } catch (error) {
-      dispatch(
-        uiActions.showNotification({
-          status: "error",
-          title: "Error!",
-          message: "Error editing task in the database!",
-        })
-      );
-      // console.error("Error editing task in the database:", error);
-    }
-  };
-};
+//           // // Dispatch action to update Redux state with the edited task
+//           // dispatch(taskActions.editTask(editedTask));
+//         }
+//       } else {
+//         dispatch(
+//           uiActions.showNotification({
+//             status: "error",
+//             title: "Error!",
+//             message: "Collection with the same name already exists!",
+//           })
+//         );
+//         // console.error(
+//         //   "Collection with the same name already exists:",
+//         //   existingCollection
+//         // );
+//       }
+//     } catch (error) {
+//       dispatch(
+//         uiActions.showNotification({
+//           status: "error",
+//           title: "Error!",
+//           message: "Error editing task in the database!",
+//         })
+//       );
+//       // console.error("Error editing task in the database:", error);
+//     }
+//   };
+// };

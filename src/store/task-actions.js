@@ -55,9 +55,9 @@ export const deleteData = (taskId) => {
     try {
       const state = getState();
       const tasks = state.task.tasks;
-      console.log(tasks);
+
       const tasksRef = ref(db, `users/${auth.currentUser.uid}/tasks`);
-      console.log(taskId);
+
       await set(
         tasksRef,
         tasks.filter((task) => task.id !== taskId)
@@ -121,7 +121,7 @@ export const editData = (editedTask) => {
       const existingTaskIndex = tasks.findIndex(
         (task) => task.id === editedTask.id
       );
-      console.log(editedTask.collectionId);
+
       if (existingTaskIndex !== -1) {
         const updatedTasks = [...tasks];
         updatedTasks[existingTaskIndex] = {

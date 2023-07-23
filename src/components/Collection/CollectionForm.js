@@ -1,14 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classes from "./CollectionForm.module.css";
 import Modal from "../UI/Modal";
 import useInput from "../../hooks/use-input";
 import { useDispatch } from "react-redux";
 import { colors } from "../../utils/colors";
 import { v4 as uuidv4 } from "uuid";
-import {
-  editCollectionData,
-  setCollectionData,
-} from "../../store/collection-actions";
+import { setCollectionData } from "../../store/collection-actions";
 
 const isNotEmpty = (value) => value.trim() !== "";
 
@@ -38,13 +35,13 @@ const CollectionForm = (props) => {
     formIsValid = true;
   }
 
-  useEffect(() => {
-    if (props.initialValues) {
-      const { name, color } = props.initialValues;
-      collectionNameChangeHandler({ target: { value: name } });
-      colorChangeHandler({ target: { value: color } });
-    }
-  }, [props.initialValues]);
+  // useEffect(() => {
+  //   if (props.initialValues) {
+  //     const { name, color } = props.initialValues;
+  //     collectionNameChangeHandler({ target: { value: name } });
+  //     colorChangeHandler({ target: { value: color } });
+  //   }
+  // }, [props.initialValues]);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -52,23 +49,23 @@ const CollectionForm = (props) => {
       return;
     }
 
-    if (props.initialValues) {
-      dispatch(
-        editCollectionData({
-          id: props.initialValues.id,
-          name: collectionNameValue,
-          color: colorValue,
-        })
-      );
-    } else {
-      dispatch(
-        setCollectionData({
-          id: uuidv4(),
-          name: collectionNameValue,
-          color: colorValue,
-        })
-      );
-    }
+    // if (props.initialValues) {
+    //   dispatch(
+    //     editCollectionData({
+    //       id: props.initialValues.id,
+    //       name: collectionNameValue,
+    //       color: colorValue,
+    //     })
+    //   );
+    // } else {
+    dispatch(
+      setCollectionData({
+        id: uuidv4(),
+        name: collectionNameValue,
+        color: colorValue,
+      })
+    );
+    // }
 
     resetCollectionName();
     resetColor();

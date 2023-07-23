@@ -149,7 +149,6 @@ const AddTaskForm = (props) => {
               value={dateValue}
               onChange={dateChangeHandler}
               onBlur={dateBlurHandler}
-              placeholder="Due Date"
             />
             {dateHasError && (
               <p className={classes["error-text"]}>Please enter a Date</p>

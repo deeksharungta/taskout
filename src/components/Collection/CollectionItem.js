@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import classes from "./CollectionItem.module.css";
 import { useDispatch } from "react-redux";
-import EditIcon from "../../assets/edit2.svg";
+// import EditIcon from "../../assets/edit2.svg";
 import DeleteIcon from "../../assets/trash.svg";
-import CollectionForm from "./CollectionForm";
+// import CollectionForm from "./CollectionForm";
 import { NavLink } from "react-router-dom";
 import DeleteDialogBox from "../DeleteDialogBox/DeleteDialogBox";
 import { deleteCollectionData } from "../../store/collection-actions";
@@ -11,7 +11,7 @@ import { deleteCollectionData } from "../../store/collection-actions";
 const CollectionItem = (props) => {
   const dispatch = useDispatch();
   const [style, setStyle] = useState({ display: "none" });
-  const [editMode, setEditMode] = useState(false);
+  // const [editMode, setEditMode] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
 
   const colorStyle = {
@@ -21,13 +21,13 @@ const CollectionItem = (props) => {
     borderRadius: "50%",
   };
 
-  const editHandler = () => {
-    setEditMode(true);
-  };
+  // const editHandler = () => {
+  //   setEditMode(true);
+  // };
 
-  const closeEditFormHandler = () => {
-    setEditMode(false);
-  };
+  // const closeEditFormHandler = () => {
+  //   setEditMode(false);
+  // };
 
   const deleteHandler = () => {
     dispatch(deleteCollectionData(props.id));
@@ -49,9 +49,9 @@ const CollectionItem = (props) => {
           confirmHandler={deleteHandler}
         />
       )}
-      {editMode && (
+      {/* {editMode && (
         <CollectionForm onClose={closeEditFormHandler} initialValues={props} />
-      )}
+      )} */}
       <div
         onMouseEnter={(e) => {
           setStyle({ display: "block" });
@@ -69,9 +69,9 @@ const CollectionItem = (props) => {
           {props.name}
         </NavLink>
         <div className={classes.actions}>
-          <button style={style} className={classes.btn} onClick={editHandler}>
+          {/* <button style={style} className={classes.btn} onClick={editHandler}>
             <img src={EditIcon} alt="Edit Icon" />
-          </button>
+          </button> */}
           <button
             style={style}
             className={classes.btn}

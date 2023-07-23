@@ -5,9 +5,7 @@ import ErrorPage from "./pages/ErrorPage";
 import { useSelector } from "react-redux";
 import Notification from "./components/UI/Notification";
 import { Suspense, lazy, useEffect, useState } from "react";
-import { checkAuthLoader } from "./utils/auth";
-import { auth } from "./utils/firebase";
-// import ProtectedRoute from "./utils/ProtectedRoute";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 const TodayPage = lazy(() => import("./pages/TodayPage"));
 const OverduePage = lazy(() => import("./pages/OverduePage"));
@@ -49,11 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/app",
     element: (
-      // <ProtectedRoute>
-      <RootLayout />
-      // </ProtectedRoute>
+      <ProtectedRoute>
+        <RootLayout />
+      </ProtectedRoute>
     ),
-    loader: checkAuthLoader(auth),
 
     children: [
       {
