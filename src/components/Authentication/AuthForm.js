@@ -16,6 +16,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import useInput from "../../hooks/use-input";
 import { uiActions } from "../../store/ui-slice";
+import { fetchData } from "../../store/task-actions";
 
 const AuthForm = ({ label }) => {
   const dispatch = useDispatch();
@@ -53,6 +54,9 @@ const AuthForm = ({ label }) => {
 
   const googleLoginHandler = () => {
     signInWithPopup(auth, provider)
+      .then(() => {
+        dispatch(fetchData());
+      })
       .then((result) => {
         dispatch(
           setCollectionData({
@@ -111,6 +115,9 @@ const AuthForm = ({ label }) => {
           displayName: usernameValue,
           photoURL: `https://ui-avatars.com/api/?name=${usernameValue}`,
         });
+      })
+      .then(() => {
+        dispatch(fetchData());
       })
       .then(() => {
         dispatch(

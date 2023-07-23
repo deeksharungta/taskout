@@ -54,9 +54,9 @@ export const deleteData = (taskId) => {
     try {
       const state = getState();
       const tasks = state.task.tasks;
-
+      console.log(tasks);
       const tasksRef = ref(db, `users/${auth.currentUser.uid}/tasks`);
-
+      console.log(taskId);
       await set(
         tasksRef,
         tasks.filter((task) => task.id !== taskId)

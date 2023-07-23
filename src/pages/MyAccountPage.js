@@ -6,6 +6,7 @@ import { auth } from "../utils/firebase";
 import BackArrow from "../assets/arrowcircleleft.svg";
 import classes from "./MyAccountPage.module.css";
 import Card from "../components/UI/Card";
+import { FirebaseError } from "firebase/app";
 
 const MyAccountPage = () => {
   const navigate = useNavigate();
@@ -100,6 +101,7 @@ const MyAccountPage = () => {
   const signOutHandler = () => {
     signOut(auth)
       .then(() => {
+        window.location.reload();
         navigate("/");
       })
       .catch((err) => {
